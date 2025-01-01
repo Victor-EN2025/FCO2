@@ -23,13 +23,13 @@ function [F_CO2, dpCO2, K_CO2] = FCO2v2(pCO2_water, pCO2_atm, SST, SSS, u)
     % Calculate the Schmidt number for CO2 in seawater
     Sc = Schmidt(SST);
 
-    % Calculate the gas transfer velocity K using the updated coefficient
+    % Calculate the gas transfer velocity K using the updated coefficient (wanninkhof, 2014):
     K_CO2 = 0.251 .* (u.^2) .* ((Sc / 660) .^ -0.5);
 
     % Calculate the difference in pCO2 between water and atmosphere
     dpCO2 = pCO2_water - pCO2_atm;
 
-    % Calculate CO2 solubility using the Weiss (1974) formula
+    % Calculate CO2 solubility using the Weiss (1974) formula:
     a = Ko_weiss(SST, SSS);
 
     % Calculate the air-sea CO2 flux in mmol m^-2 d^-1
@@ -51,7 +51,7 @@ end
      
 %******** Schmidt Number*********
 
-    %For water of salinity=35 and temperature range –2° and 40°C %%%%%%%%%%%%%
+    %For water of salinity=35 and temperature range â€“2Â° and 40Â°C %%%%%%%%%%%%%
     
     function [Sc]=Schmidt(SST)
             A = 2116.8;     B = -136.25;     C = 4.7353;     D = -0.092307;

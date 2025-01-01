@@ -1,10 +1,3 @@
-
-"""
-
-
-@author: Ebolo
-"""
-
 # === Fonction principale : Calcul des flux de CO2 ===
 def FCO2v2(pCO2_water, pCO2_atm, SST, SSS, u):
     """

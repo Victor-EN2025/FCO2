@@ -1,6 +1,8 @@
-function ax = ptable(rows, cols)
-    % Crée une figure avec un arrangement personnalisé de sous-graphes
+function ax = vtable(rows, cols)
+    % Cree une figure avec un arrangement personnalisé de sous-graphes
     % rows et cols sont des vecteurs spécifiant la disposition des sous-figures
+    % auteur Victor Ebolo 
+    % Msc Universite de Douala
     ax = zeros(rows(1), rows(2)); % Initialiser un tableau pour les axes
     for i = 1:rows(1)
         for j = 1:cols(i)
